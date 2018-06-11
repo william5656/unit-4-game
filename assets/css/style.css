@@ -1,0 +1,19 @@
+.title {
+    text-align: center;
+    font-size: 60px;
+    height: 90px;
+    font-family: 'Bungee Shade', cursive;
+    color: #ff1a1a;
+}
+
+#main {
+    border: 1px solid black;
+}
+
+h3 {
+    margin: 20px;
+}
+
+.aside{
+    border: 1px solid black;
+}
