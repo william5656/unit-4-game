@@ -2,28 +2,58 @@ $(document).ready(function() {
 var wins= 0;
 var loss= 0;
 var score = 0;
-
-var goal = Math.floor(Math.random() * 100) + 30;
-  $(".goal").append(goal);
-  console.log(goal);
+var numopt1 = 0;
+var numopt2 = 0;
+var numopt3 = 0;
+var numopt4 = 0;
+var goal = 0;
 
 
 function crystalGame(){
 
-    var numopt1 = Math.floor(Math.random() * 12) + 1; 
+    score = 0;
+    numopt1 = 0;
+    numopt2 = 0;
+    numopt3 = 0;
+    numopt4 = 0;
+    goal = 0;
+
+    $(".thepoints").html(score);
+    
+    goal = Math.floor(Math.random() * 100) + 30;
+    $(".goal").html(goal);
+    console.log(goal);
+
+    numopt1 = Math.floor(Math.random() * 12) + 1; 
     console.log(numopt1);
 
-    var numopt2 = Math.floor(Math.random() * 12) + 1; 
+    numopt2 = Math.floor(Math.random() * 12) + 1; 
     console.log(numopt2);
 
-    var numopt3 = Math.floor(Math.random() * 12) + 1; 
+    numopt3 = Math.floor(Math.random() * 12) + 1; 
     console.log(numopt3);
 
-    var numopt4 = Math.floor(Math.random() * 12) + 1; 
+    numopt4 = Math.floor(Math.random() * 12) + 1; 
     console.log(numopt4);
-    
+}
 
-    $("#crystals1").on("click", function(){
+
+function check() {
+    $(".thepoints").html(score);
+
+    if(score === goal){
+        wins++;
+        $(".win").html(wins);
+        crystalGame()
+    }
+    else if(score > goal){
+        loss++;
+        $(".loss").html(loss);
+        crystalGame()
+    }
+}
+
+$("#crystals1").on("click", function(){
     score = score + numopt1;
     console.log(score);
     check()
@@ -46,18 +76,6 @@ function crystalGame(){
         console.log(score);
         check()
     })
-}
-
-function check() {
-    
-    if(score === goal){
-        wins++
-        alert("you win")
-        console.log ("you score is " + score);
-        console.log ("your goal is " + goal);
-        console.log (goal);
-    }
-}
 
 crystalGame()
 
