@@ -19,12 +19,35 @@ function crystalGame(){
     goal = 0;
 
     $(".thepoints").html(score);
-    
+
     goal = Math.floor(Math.random() * 100) + 30;
     $(".goal").html(goal);
     console.log(goal);
 
-    numopt1 = Math.floor(Math.random() * 12) + 1; 
+    
+    var arr = []
+    while(arr.length < 4){
+        var randomnumber = Math.floor(Math.random()*12) + 1;
+        //console.log("loop iteration" + randomnumber);
+        if(arr.indexOf(randomnumber) > -1) continue;
+        arr[arr.length] = randomnumber;
+        //console.log("pushed number " + randomnumber);
+    }
+
+    numopt1 = parseInt(arr[0]);
+    console.log("this is the ran1 " + numopt1);
+
+    numopt2 = parseInt(arr[1]);
+    console.log("this is the ran2 " + numopt2);
+
+    numopt3 = parseInt(arr[2]);
+    console.log("this is the ran3 " + numopt3);
+
+    numopt4 = parseInt(arr[3]); 
+    console.log("this is the ran3 " + numopt4);
+}
+
+  /*  numopt1 = Math.floor(Math.random() * 12) + 1; 
     console.log(numopt1);
 
     numopt2 = Math.floor(Math.random() * 12) + 1; 
@@ -35,7 +58,7 @@ function crystalGame(){
 
     numopt4 = Math.floor(Math.random() * 12) + 1; 
     console.log(numopt4);
-}
+}*/
 
 
 function check() {
@@ -76,6 +99,7 @@ $("#crystals1").on("click", function(){
         console.log(score);
         check()
     })
+
 
 crystalGame()
 
