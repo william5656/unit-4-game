@@ -6,14 +6,54 @@
     color: #ff1a1a;
 }
 
+#logo {
+    width: 55%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #main {
-    border: 1px solid black;
+    border: 1px solid #3385ff;
+    position: relative;
+}
+
+.goal {
+    width: 50px;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+h2 {
+    font-size: 35px;
 }
 
 h3 {
     margin: 20px;
+    font-size: 35px;
 }
 
 .aside{
-    border: 1px solid black;
+    border: 1px solid #3385ff;
+}
+
+#crystals1, #crystals2, #crystals3, #crystals4 {
+    height: 100px;
+    width: 100px;
+}
+
+.points {
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid#3385ff;
+    width: 100%;
+}
+
+.urpoints {
+    font-size: 30px;
+}
+
+button {
+    background: none;
+    border-color: #99ccff;
 }
